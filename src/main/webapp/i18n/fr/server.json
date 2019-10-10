@@ -1,0 +1,25 @@
+{
+  "cloudappwatchApp": {
+    "server": {
+      "home": {
+        "title": "Servers",
+        "createLabel": "Créer un nouveau Server",
+        "createOrEditLabel": "Créer ou éditer un Server",
+        "notFound": "Aucun Server trouvé"
+      },
+      "created": "Un nouveau Server a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Server avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Server avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Server {{ id }} ?"
+      },
+      "detail": {
+        "title": "Server"
+      },
+      "hostName": "Host Name",
+      "status": "Status",
+      "lastCheck": "Last Check",
+      "admin": "Admin"
+    }
+  }
+}

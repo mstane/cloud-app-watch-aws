@@ -1,0 +1,38 @@
+{
+    "name": "Server",
+    "fields": [
+        {
+            "fieldName": "hostName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "ServiceStatus",
+            "fieldValues": "COMPLETE,PARTIAL,STALE,FAILURE,DOWN,ERROR"
+        },
+        {
+            "fieldName": "lastCheck",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "server",
+            "relationshipName": "admin",
+            "otherEntityField": "login"
+        }
+    ],
+    "changelogDate": "20191010191515",
+    "entityTableName": "server",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "cloudappwatch"
+    ]
+}

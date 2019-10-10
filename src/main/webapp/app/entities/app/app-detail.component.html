@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="app">
+            <h2><span jhiTranslate="cloudappwatchApp.app.detail.title">App</span> {{app.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cloudappwatchApp.app.commandLine">Command Line</span></dt>
+                <dd>
+                    <span>{{app.commandLine}}</span>
+                </dd>
+                <dt><span jhiTranslate="cloudappwatchApp.app.serviceFlag">Service Flag</span></dt>
+                <dd>
+                    <span>{{app.serviceFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="cloudappwatchApp.app.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'cloudappwatchApp.AppStatus.' + app.status}}">{{app.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="cloudappwatchApp.app.server">Server</span></dt>
+                <dd>
+                    <div *ngIf="app.server">
+                        <a [routerLink]="['/server', app.server?.id, 'view']">{{app.server?.hostName}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/app', app.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

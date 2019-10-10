@@ -1,0 +1,46 @@
+application {
+  config {
+    baseName cloudappwatch,
+    applicationType monolith,
+    packageName io.github.ms.cloudappwatch,
+    authenticationType jwt,
+    prodDatabaseType mysql,
+    cacheProvider no,
+    enableHibernateCache false,
+    buildTool maven,
+    clientFramework angularX,
+    useSass false
+  }
+  entities *
+}
+
+entity Server {
+	hostName String,
+	status ServiceStatus,
+	lastCheck ZonedDateTime
+}
+
+enum ServiceStatus {
+	COMPLETE, PARTIAL, STALE, FAILURE, DOWN, ERROR
+}
+
+entity App {
+	commandLine TextBlob,
+    serviceFlag Boolean,
+	status AppStatus
+}
+
+enum AppStatus {
+	UP, DOWN, FAILURE
+}
+
+relationship ManyToOne {
+	App{server(name)} to Server,
+    Server{admin(login)} to User
+}
+
+service Server, App with serviceClass
+
+filter Server, App
+
+paginate Server, App with infinite-scroll

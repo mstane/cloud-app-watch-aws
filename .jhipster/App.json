@@ -1,0 +1,39 @@
+{
+    "name": "App",
+    "fields": [
+        {
+            "fieldName": "commandLine",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "serviceFlag",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "AppStatus",
+            "fieldValues": "UP,DOWN,FAILURE"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "server",
+            "otherEntityRelationshipName": "app",
+            "relationshipName": "server",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20191010191516",
+    "entityTableName": "app",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "cloudappwatch"
+    ]
+}

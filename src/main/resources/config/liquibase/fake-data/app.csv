@@ -1,0 +1,11 @@
+id;command_line;service_flag;status
+1;../fake-data/blob/hipster.txt;false;UP
+2;../fake-data/blob/hipster.txt;false;DOWN
+3;../fake-data/blob/hipster.txt;true;UP
+4;../fake-data/blob/hipster.txt;true;FAILURE
+5;../fake-data/blob/hipster.txt;true;FAILURE
+6;../fake-data/blob/hipster.txt;true;DOWN
+7;../fake-data/blob/hipster.txt;false;DOWN
+8;../fake-data/blob/hipster.txt;true;DOWN
+9;../fake-data/blob/hipster.txt;true;FAILURE
+10;../fake-data/blob/hipster.txt;false;FAILURE

@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="server">
+            <h2><span jhiTranslate="cloudappwatchApp.server.detail.title">Server</span> {{server.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cloudappwatchApp.server.hostName">Host Name</span></dt>
+                <dd>
+                    <span>{{server.hostName}}</span>
+                </dd>
+                <dt><span jhiTranslate="cloudappwatchApp.server.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'cloudappwatchApp.ServiceStatus.' + server.status}}">{{server.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="cloudappwatchApp.server.lastCheck">Last Check</span></dt>
+                <dd>
+                    <span>{{server.lastCheck}}</span>
+                </dd>
+                <dt><span jhiTranslate="cloudappwatchApp.server.admin">Admin</span></dt>
+                <dd>
+                    {{server.admin?.login}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/server', server.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
