@@ -3,7 +3,7 @@ Parameters:
   applicationStackS3Bucket:
     Type: String
     Description: Name of the S3 bucket containing the application.template.yml template file
-    Default: caw2-1570735779129
+    Default: caw9-1570735779129
   cloudappwatchDBPassword:
     Type: String
     Description: Aurora master database password for cloudappwatch
@@ -22,7 +22,7 @@ Resources:
     Properties:
       Parameters:
         parentStackName: !Ref AWS::StackName
-        repositoryName: caw2/cloudappwatch
+        repositoryName: caw9/cloudappwatch
         shouldDeployService: !Ref shouldDeployService
         databasePassword: !Ref cloudappwatchDBPassword
       TemplateURL: !Join ['', ['https://s3.amazonaws.com/', !Ref applicationStackS3Bucket, '/cloudappwatch.template.yml']]

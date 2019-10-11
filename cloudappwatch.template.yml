@@ -34,23 +34,23 @@ Parameters:
   vpcID:
     Type: String
     Description: VPC Target
-    Default: vpc-0f9c7cc55e24f222d
+    Default: vpc-5fccf139
   elbSubnets:
     Type: CommaDelimitedList
     Description: List of subnets to use
-    Default: subnet-0acac68726bb8474a, subnet-008d165a8bc7fe46f
+    Default: subnet-06d7a94e, subnet-6876180e
   appSubnets:
     Type: CommaDelimitedList
     Description: List of subnets to use
-    Default: subnet-0acac68726bb8474a, subnet-008d165a8bc7fe46f
+    Default: subnet-06d7a94e, subnet-6876180e
   AppDeployUsingPublicIP:
     Type: String
     Description: Should the Application be Deployed with a Public IP
-    Default: DISABLED
+    Default: ENABLED
   vpcCIDR:
     Type: String
     Description: CIDR IPv4 range for the VPC
-    Default: 172.16.0.0/16
+    Default: 172.31.0.0/16
   TaskCount:
     Type: Number
     Description: Desired task count

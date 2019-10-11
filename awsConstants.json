@@ -1,0 +1,38 @@
+{
+  "apps": [
+    {
+      "baseName": "cloudappwatch",
+      "performance": "low",
+      "fargate": { "CPU": "1024", "memory": "2GB", "taskCount": 1 },
+      "database": { "size": "db.t2.small", "supportedEngines": ["mariadb", "mysql"], "instances": 1 },
+      "scaling": "low",
+      "dbType": "mysql",
+      "auroraEngine": "aurora-mysql",
+      "auroraFamily": "aurora-mysql5.7",
+      "auroraClusterParameterGroupName": "default.aurora-mysql5.7",
+      "auroraDbParam": "sql_mode: IGNORE_SPACE",
+      "stackId": "arn:aws:cloudformation:eu-west-1:883256995622:stack/caw9-cloudappwatch-11DUUS0RWPUAS/6fccadb0-ec7e-11e9-9e65-0a4c7381ba1c",
+      "EcrRepositoryName": "caw9/cloudappwatch",
+      "EcrRepositoryUri": "883256995622.dkr.ecr.eu-west-1.amazonaws.com/caw9/cloudappwatch",
+      "dockerImageTag": "883256995622.dkr.ecr.eu-west-1.amazonaws.com/caw9/cloudappwatch:latest"
+    }
+  ],
+  "vpc": {
+    "id": "vpc-5fccf139",
+    "cidr": "172.31.0.0/16",
+    "elbSubnets": ["subnet-06d7a94e", "subnet-6876180e"],
+    "appSubnets": ["subnet-06d7a94e", "subnet-6876180e"],
+    "appSubnetsLaunchWithPublicIP": true
+  },
+  "region": "eu-west-1",
+  "cloudFormationName": "caw9",
+  "s3BucketName": "caw9-1570735779129",
+  "s3bucketLocation": "/caw9-1570735779129",
+  "s3BaseTemplate": {
+    "ETag": "\"945da98d9548ec3386ec891fe626bf4a\"",
+    "Location": "https://caw9-1570735779129.s3.amazonaws.com/base.template.yml",
+    "key": "base.template.yml",
+    "Key": "base.template.yml",
+    "Bucket": "caw9-1570735779129"
+  }
+}
