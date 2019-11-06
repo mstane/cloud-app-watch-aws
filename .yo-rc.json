@@ -36,7 +36,16 @@
     "entitySuffix": "",
     "dtoSuffix": "DTO",
     "otherModules": [],
-    "blueprints": []
+    "blueprints": [],
+    "appsFolders": ["cloud-app-watch-aws"],
+    "directoryPath": "../",
+    "dockerRepositoryName": "stane",
+    "dockerPushCommand": "docker push",
+    "kubernetesNamespace": "default",
+    "kubernetesServiceType": "LoadBalancer",
+    "ingressDomain": "",
+    "monitoring": "no",
+    "istio": false
   },
   "entities": ["Server", "App"]
 }
